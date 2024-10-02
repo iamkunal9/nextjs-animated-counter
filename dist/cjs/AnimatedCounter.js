@@ -1,16 +1,15 @@
 "use strict";
-exports.__esModule = true;
+Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
 var react_1 = tslib_1.__importStar(require("react"));
 var framer_motion_1 = require("framer-motion");
 var util_1 = require("./util");
 var hooks_1 = require("./hooks");
 var debounce_1 = tslib_1.__importDefault(require("lodash/debounce"));
-require("./styles.css");
 // Decimal element component
 var DecimalColumn = function (_a) {
     var fontSize = _a.fontSize, color = _a.color, isComma = _a.isComma, digitStyles = _a.digitStyles;
-    return (react_1["default"].createElement("span", { style: tslib_1.__assign({ fontSize: fontSize, lineHeight: fontSize, color: color, marginLeft: "calc(-".concat(fontSize, " / 10)") }, digitStyles) }, isComma ? ',' : '.'));
+    return (react_1.default.createElement("span", { style: tslib_1.__assign({ fontSize: fontSize, lineHeight: fontSize, color: color, marginLeft: "calc(-".concat(fontSize, " / 10)") }, digitStyles) }, isComma ? ',' : '.'));
 };
 // Individual number element component
 var NumberColumn = (0, react_1.memo)(function (_a) {
@@ -20,7 +19,7 @@ var NumberColumn = (0, react_1.memo)(function (_a) {
     var currentDigit = +digit;
     var previousDigit = (0, hooks_1.usePrevious)(+currentDigit);
     var columnContainer = (0, react_1.useRef)(null);
-    var handleAnimationComplete = (0, react_1.useCallback)((0, debounce_1["default"])(function () {
+    var handleAnimationComplete = (0, react_1.useCallback)((0, debounce_1.default)(function () {
         setAnimationClass("");
     }, 200), []);
     var setColumnToNumber = (0, react_1.useCallback)(function (number) {
@@ -37,12 +36,12 @@ var NumberColumn = (0, react_1.memo)(function (_a) {
     }, [digit, setColumnToNumber]);
     // If digit is negative symbol, simply return an unanimated character
     if (digit === '-') {
-        return (react_1["default"].createElement("span", { style: tslib_1.__assign({ color: color, fontSize: fontSize, lineHeight: fontSize, marginRight: "calc(".concat(fontSize, " / 5)") }, digitStyles) }, digit));
+        return (react_1.default.createElement("span", { style: tslib_1.__assign({ color: color, fontSize: fontSize, lineHeight: fontSize, marginRight: "calc(".concat(fontSize, " / 5)") }, digitStyles) }, digit));
     }
-    return (react_1["default"].createElement("div", { className: 'ticker-column-container', ref: columnContainer, style: tslib_1.__assign({ fontSize: fontSize, lineHeight: fontSize, height: 'auto', color: color, '--increment-color': "".concat(incrementColor), '--decrement-color': "".concat(decrementColor) }, digitStyles) },
-        react_1["default"].createElement(framer_motion_1.motion.div, { animate: { x: 0, y: position }, className: "ticker-column ".concat(animationClass), onAnimationComplete: handleAnimationComplete }, [9, 8, 7, 6, 5, 4, 3, 2, 1, 0].map(function (num) { return (react_1["default"].createElement("div", { className: 'ticker-digit', key: num },
-            react_1["default"].createElement("span", { style: tslib_1.__assign({ fontSize: fontSize, lineHeight: fontSize }, digitStyles) }, num))); })),
-        react_1["default"].createElement("span", { className: 'number-placeholder' }, "0")));
+    return (react_1.default.createElement("div", { className: 'ticker-column-container', ref: columnContainer, style: tslib_1.__assign({ fontSize: fontSize, lineHeight: fontSize, height: 'auto', color: color, '--increment-color': "".concat(incrementColor), '--decrement-color': "".concat(decrementColor) }, digitStyles) },
+        react_1.default.createElement(framer_motion_1.motion.div, { animate: { x: 0, y: position }, className: "ticker-column ".concat(animationClass), onAnimationComplete: handleAnimationComplete }, [9, 8, 7, 6, 5, 4, 3, 2, 1, 0].map(function (num) { return (react_1.default.createElement("div", { className: 'ticker-digit', key: num },
+            react_1.default.createElement("span", { style: tslib_1.__assign({ fontSize: fontSize, lineHeight: fontSize }, digitStyles) }, num))); })),
+        react_1.default.createElement("span", { className: 'number-placeholder' }, "0")));
 }, function (prevProps, nextProps) { return prevProps.digit === nextProps.digit && prevProps.delta === nextProps.delta; });
 // Main component
 var AnimatedCounter = function (_a) {
@@ -59,11 +58,12 @@ var AnimatedCounter = function (_a) {
             delta = 'decrease';
         }
     }
-    return (react_1["default"].createElement(framer_motion_1.motion.div, { layout: true, className: 'ticker-view', style: tslib_1.__assign({}, containerStyles) },
+    return (react_1.default.createElement(framer_motion_1.motion.div, { layout: true, className: 'ticker-view', style: tslib_1.__assign({}, containerStyles) },
         numArray.map(function (number, index) {
-            return number === "." || number === "," ? (react_1["default"].createElement(DecimalColumn, { key: index, fontSize: fontSize, color: color, isComma: number === ",", digitStyles: digitStyles })) : (react_1["default"].createElement(NumberColumn, { key: index, digit: number, delta: delta, color: color, fontSize: fontSize, incrementColor: incrementColor, decrementColor: decrementColor, digitStyles: digitStyles }));
+            return number === "." || number === "," ? (react_1.default.createElement(DecimalColumn, { key: index, fontSize: fontSize, color: color, isComma: number === ",", digitStyles: digitStyles })) : (react_1.default.createElement(NumberColumn, { key: index, digit: number, delta: delta, color: color, fontSize: fontSize, incrementColor: incrementColor, decrementColor: decrementColor, digitStyles: digitStyles }));
         }),
         isNegative &&
-            react_1["default"].createElement(NumberColumn, { key: 'negative-feedback', digit: '-', delta: delta, color: color, fontSize: fontSize, incrementColor: incrementColor, decrementColor: decrementColor, digitStyles: digitStyles })));
+            react_1.default.createElement(NumberColumn, { key: 'negative-feedback', digit: '-', delta: delta, color: color, fontSize: fontSize, incrementColor: incrementColor, decrementColor: decrementColor, digitStyles: digitStyles })));
 };
-exports["default"] = AnimatedCounter;
+exports.default = AnimatedCounter;
+//# sourceMappingURL=AnimatedCounter.js.map

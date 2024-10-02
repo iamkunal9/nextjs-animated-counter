@@ -4,7 +4,6 @@ import { motion } from "framer-motion";
 import { formatForDisplay } from "./util";
 import { usePrevious } from "./hooks";
 import debounce from 'lodash/debounce';
-import './styles.css';
 // Decimal element component
 var DecimalColumn = function (_a) {
     var fontSize = _a.fontSize, color = _a.color, isComma = _a.isComma, digitStyles = _a.digitStyles;
@@ -65,3 +64,4 @@ var AnimatedCounter = function (_a) {
             React.createElement(NumberColumn, { key: 'negative-feedback', digit: '-', delta: delta, color: color, fontSize: fontSize, incrementColor: incrementColor, decrementColor: decrementColor, digitStyles: digitStyles })));
 };
 export default AnimatedCounter;
+//# sourceMappingURL=AnimatedCounter.js.map
