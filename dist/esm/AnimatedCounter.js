@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { formatForDisplay } from "./util";
 import { usePrevious } from "./hooks";
 import debounce from 'lodash/debounce';
+import './styles.css';
 // Decimal element component
 var DecimalColumn = function (_a) {
     var fontSize = _a.fontSize, color = _a.color, isComma = _a.isComma, digitStyles = _a.digitStyles;
