@@ -1,6 +1,6 @@
 {
   "name": "nextjs-animated-counter",
-  "version": "1.7.9",
+  "version": "1.8.0",
   "description": "Nextjs Animated Counter Component",
   "main": "./dist/cjs/index.js",
   "module": "./dist/esm/index.js",
