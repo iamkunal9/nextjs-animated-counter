@@ -1,7 +1,7 @@
 {
-  "name": "react-animated-counter",
+  "name": "nextjs-animated-counter",
   "version": "1.7.9",
-  "description": "React Animated Counter Component",
+  "description": "Nextjs Animated Counter Component",
   "main": "./dist/cjs/index.js",
   "module": "./dist/esm/index.js",
   "types": "./dist/esm/index.d.ts",
@@ -12,10 +12,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/TuckerMassad/react-animated-counter.git"
+    "url": "git+https://github.com/iamkunal9/nextjs-animated-counter.git"
   },
   "keywords": [
-    "react",
+    "nextjs",
     "animated",
     "counter",
     "components",
@@ -37,9 +37,9 @@
   "author": "tuckermassad",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/TuckerMassad/react-animated-counter/issues"
+    "url": "https://github.com/iamkunal9/nextjs-animated-counter/issues"
   },
-  "homepage": "https://github.com/TuckerMassad/react-animated-counter#readme",
+  "homepage": "https://github.com/iamkunal9/nextjs-animated-counter#readme",
   "peerDependencies": {
     "react": ">=16"
   },
